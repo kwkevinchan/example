@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('gender');
             $table->date('birthday');
             $table->text('comment');
-            $table->text('sort');
         });
     }
 

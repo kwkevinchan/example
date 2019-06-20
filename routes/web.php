@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'UserController@index');
-Route::get('/user/create', 'UserController@create');
-Route::post('/user/{id}/create', 'UserController@store');
-Route::get('/user/{id}/edit', 'UserController@edit');
-Route::post('/user/{id}/edit', 'UserController@update');
-Route::get('/user/{id}/delete', 'UserController@destroy');
+Route::get('/', 'UserController@index')->name('index');
+Route::get('/user/create', 'UserController@create')->name('user.create');
+Route::post('/user/{id}/create', 'UserController@store')->name('user.store');
+Route::get('/user/{id}/edit', 'UserController@edit')->name('user.indeditex');
+Route::post('/user/{id}/edit', 'UserController@update')->name('user.update');
+Route::get('/user/{id}/delete', 'UserController@destroy')->name('user.destroy');
