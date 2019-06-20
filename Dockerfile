@@ -12,7 +12,7 @@ RUN composer install \
 FROM node:8-alpine as node
 COPY --from=vender /var/www/app/ /var/www/app
 WORKDIR /var/www/app/
-RUN npm run prod
+RUN npm run production
 RUN rm -r /var/www/app/node_modules
 
 FROM php:7.1-fpm-alpine3.8 as php
