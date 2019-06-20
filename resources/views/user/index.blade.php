@@ -11,7 +11,7 @@
               使用者清單
             </h5>
 
-            <form class="ml-auto col-md-4">
+            <form class="ml-auto col-md-6">
               <div class="form-group" style="margin-bottom:0px">
               </div>
             </form>
@@ -28,6 +28,7 @@
                   <th>生日</th>
                   <th>備註</th>
                   <th width="20%">操作</th>
+                  <th width="20%"></th>
                 </tr>
               </thead>
               <tbody id="mainTable">
@@ -49,8 +50,7 @@
   let table = new Array();
   for(let item in data){
     let value = data[item];
-    for(let i = 0; i < value.length; i++){
-      let d = value[i];
+      let d = value;
       table.push('<tr>')
         table.push('<td>' + d['name'] + '</td>')
         table.push('<td>' + d['email'] + '</td>')
@@ -60,7 +60,6 @@
         table.push('<td><a href="/user/'+ d['id'] +'/edit" class="btn text-white btn-primary" role="button" aria-pressed="true">修改使用者</a></td>')
         table.push('<td><a href="/user/'+ d['id'] +'/delete" class="btn text-white btn-primary" role="button" aria-pressed="true">刪除使用者</a></td>')
       table.push('</tr>')
-    }
   }
   document.getElementById('mainTable').innerHTML = table.join('');
 </script>
