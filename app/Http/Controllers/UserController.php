@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
         return view('user.index')->with([
-            'data' => json_encode(User::get()->all()),
+            'data' => User::get()->all(),
         ]);
     }
 
