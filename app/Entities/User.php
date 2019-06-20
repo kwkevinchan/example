@@ -19,4 +19,6 @@ class User extends Model
         'birthday', 
         'comment',
     ];
+
+    public $timestamps = false;
 }
