@@ -79,6 +79,7 @@
         birthday = document.getElementById('birthday').value;
         gender = document.getElementById('gender').value;
         comment = document.getElementById('comment').value;
+
         axios.post("{{ route('user.store') }}", {
             name: name,
             email: email,
@@ -86,12 +87,13 @@
             gender: gender,
             comment: comment,
         })
-            .then(function(res) {
-                console.log(res);
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
+        .then(function(res) {
+            console.log(res);
+        })
+        .catch(function(res) {
+            console.log(res.data);
+            console.log('error');
+        });
     }
 </script>
 @endsection
