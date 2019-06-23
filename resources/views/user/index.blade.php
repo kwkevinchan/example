@@ -90,9 +90,13 @@
             body = document.getElementById('popModalBody');
             body.innerHTML = (error.response.data.msg);
             url = document.getElementById('popModalUrl');
-            url.setAttribute('style', "display:none;");
+            url.setAttribute('onclick', "closePop()");
             $('#popModal').modal('show');
         });
+  }
+
+  function closePop(){
+    $('#popModal').modal('hide');
   }
 </script>
 @endsection
