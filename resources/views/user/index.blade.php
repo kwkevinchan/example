@@ -76,7 +76,7 @@
   function sendDelete(id) {
     axios.get("{{ route('user.destroy', [ 'id' => " + id + " ]) }}")
         .then(function(res) {
-            console.log(res.data.msg);
+            console.log(res);
             title = document.getElementById('popModalTitle');
             title.innerHTML = (res.data.status);
             body = document.getElementById('popModalBody');
@@ -86,16 +86,16 @@
             document.getElementById(tr + id).remove();
             $('#popModal').modal('show');
         })
-        .catch(function(error) {
-            console.log(error.response.data);
-            title = document.getElementById('popModalTitle');
-            title.innerHTML = (error.response.data.status);
-            body = document.getElementById('popModalBody');
-            body.innerHTML = (error.response.data.msg);
-            url = document.getElementById('popModalUrl');
-            url.setAttribute('onclick', "closePop()");
-            $('#popModal').modal('show');
-        });
+        // .catch(function(error) {
+        //     console.log(error.response);
+        //     title = document.getElementById('popModalTitle');
+        //     title.innerHTML = (error.response.data.status);
+        //     body = document.getElementById('popModalBody');
+        //     body.innerHTML = (error.response.data.msg);
+        //     url = document.getElementById('popModalUrl');
+        //     url.setAttribute('onclick', "closePop()");
+        //     $('#popModal').modal('show');
+        // });
   }
 
   function closePop(){
