@@ -62,11 +62,6 @@
         table.push('<td><button type="button" class="btn btn-primary" onclick="deleteUser(' + d['id'] + ',' + d['name'] +')">刪除使用者</button></td>')
       table.push('</tr>')
   }
-
-  <  data-toggle="modal" data-target="#exampleModalCenter">
-  
-</>
-
   document.getElementById('mainTable').innerHTML = table.join('');
 
   function deleteUser(id, name) {
