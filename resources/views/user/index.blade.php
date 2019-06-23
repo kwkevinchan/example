@@ -73,7 +73,7 @@
   }
 
   function sendDelete(id) {
-    axios.post("{{ route('user.delete') }}")
+    axios.post("{{ route('user.destroy') }}")
         .then(function(res) {
             console.log(res.data.msg);
             title = document.getElementById('popModalTitle');
