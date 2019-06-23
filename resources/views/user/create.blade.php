@@ -91,15 +91,20 @@
         })
         .then(function(res) {
             console.log(res.msg);
-            document.getElementById('popModalTitle').innerHTML(res.status);
-            document.getElementById('popModalBody').innerHTML(res.msg);
-            document.getElementById('popModalUrl').innerHTML("{{ route('index') }}");
+            title = document.getElementById('popModalTitle');
+            title.innerHTML(res.status);
+            body = document.getElementById('popModalBody');
+            body.innerHTML(res.msg);
+            url = document.getElementById('popModalUrl');
+            url.innerHTML("{{ route('index') }}");
             $('#popModal').modal('show');
         })
         .catch(function(error) {
             console.log(error.response.msg);
-            document.getElementById('popModalTitle').innerHTML(error.response.status);
-            document.getElementById('popModalBody').innerHTML(error.response.msg);
+            title = document.getElementById('popModalTitle');
+            title.innerHTML(error.response.status);
+            body = document.getElementById('popModalBody');
+            body.innerHTML(error.response.msg);
             $('#popModal').modal('show');
         });
     }
