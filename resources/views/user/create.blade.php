@@ -103,8 +103,6 @@
             $('#popModal').modal('show');
         });
     }
-
-    function red
 </script>
 @endsection
 
