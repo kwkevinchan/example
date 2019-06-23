@@ -58,7 +58,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="button" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary" onclick="sendForm()">
                                     新增使用者
                                 </button>
                             </div>
