@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-8">
         <div class="card">
           <div class="card-header bg-primary text-white d-flex">
             <h5 class="font-weight-bold flex-grow-1 " style="margin-top:5px">
@@ -37,10 +33,6 @@
             </table>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 @endsection
 
 @section('script')
@@ -74,7 +66,7 @@
   }
 
   function sendDelete(id) {
-    axios.get("{{ route('user.destroy', [ 'id' => " + id + " ]) }}")
+    axios.get("/user/" + id + "/delete")
         .then(function(res) {
             console.log(res);
             title = document.getElementById('popModalTitle');
