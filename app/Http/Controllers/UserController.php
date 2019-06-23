@@ -45,9 +45,15 @@ class UserController extends Controller
                 'birthday' => $request->birthday,
                 'comment' => $request->comment,
             ]);
-            return response('ok', 200);
+            return response()->json([
+                'status' => 'success',
+                'msg' => 'Ok',
+            ], 200);
         } catch ( \Exception $e ) {
-            return response($e->getMessage(), 500);
+            return response()->json([
+                'status' => 'error',
+                'msg' => $e->getMessage(),
+            ], 422);
         }
 
     }
@@ -94,9 +100,15 @@ class UserController extends Controller
                 'birthday' => $request->birthday,
                 'comment' => $request->comment,
             ]);
-            return response('ok', 200);
+            return response()->json([
+                'status' => 'success',
+                'msg' => 'Ok',
+            ], 200);
         } catch ( \Exception $e ) {
-            return response($e->getMessage(), 500);
+            return response()->json([
+                'status' => 'error',
+                'msg' => $e->getMessage(),
+            ], 422);
         }
 
     }
@@ -111,9 +123,15 @@ class UserController extends Controller
     {
         try {
             User::where('id', $id)->delete();
-            return response('ok', 200);
+            return response()->json([
+                'status' => 'success',
+                'msg' => 'Ok',
+            ], 200);
         } catch ( \Exception $e ) {
-            return response($e->getMessage(), 500);
+            return response()->json([
+                'status' => 'error',
+                'msg' => $e->getMessage(),
+            ], 422);
         }
     }
 }
