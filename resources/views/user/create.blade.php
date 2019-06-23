@@ -90,21 +90,21 @@
             comment: comment,
         })
         .then(function(res) {
-            console.log(res.msg);
+            console.log(res.data.msg);
             title = document.getElementById('popModalTitle');
-            title.innerHTML(res.status);
+            title.innerHTML = (res.data.status);
             body = document.getElementById('popModalBody');
-            body.innerHTML(res.msg);
+            body.innerHTML = (res.data.msg);
             url = document.getElementById('popModalUrl');
-            url.innerHTML("{{ route('index') }}");
+            url.setAttribute('href', "{{ route('index') }}");
             $('#popModal').modal('show');
         })
         .catch(function(error) {
             console.log(error.response.msg);
             title = document.getElementById('popModalTitle');
-            title.innerHTML(error.response.status);
+            title.innerHTML = (error.response.status);
             body = document.getElementById('popModalBody');
-            body.innerHTML(error.response.msg);
+            body.innerHTML = (error.response.msg);
             $('#popModal').modal('show');
         });
     }
