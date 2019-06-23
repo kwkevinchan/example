@@ -66,6 +66,8 @@
   function deleteUser(id, name) {
     title = document.getElementById('popModalTitle');
     title.innerHTML = ('您將刪除:' + name);
+    body = document.getElementById('popModalBody');
+    body.innerHTML = ('請確認，刪除後的資料將無法復原');
     url = document.getElementById('popModalUrl');
     url.setAttribute('onclick', "sendDelete("+id+")");
     $('#popModal').modal('show');
