@@ -59,7 +59,7 @@
         table.push('<td>' + d['birthday'] + '</td>')
         table.push('<td>' + d['comment'] + '</td>')
         table.push('<td><a href="/user/'+ d['id'] +'/edit" class="btn text-white btn-primary" role="button" aria-pressed="true">修改使用者</a></td>')
-        table.push('<td><button type="button" class="btn btn-primary" onclick="deleteUser("' + d['id'] + '", "' + d['name'] +'")">刪除使用者</button></td>')
+        table.push('<td><button type="button" class="btn btn-primary" onclick="deleteUser(\'' + d['id'] + '\', \'' + d['name'] +'\')">刪除使用者</button></td>')
       table.push('</tr>')
   }
   document.getElementById('mainTable').innerHTML = table.join('');
