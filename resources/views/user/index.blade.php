@@ -81,6 +81,8 @@
             title.innerHTML = (res.data.status);
             body = document.getElementById('popModalBody');
             body.innerHTML = (res.data.msg);
+            url = document.getElementById('popModalUrl');
+            url.setAttribute('onclick', "closePop()");
             $('#popModal').modal('show');
         })
         .catch(function(error) {
