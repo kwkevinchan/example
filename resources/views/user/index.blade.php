@@ -51,7 +51,7 @@
   for(let item in data){
     let value = data[item];
       let d = value;
-      table.push('<tr>')
+      table.push('<tr id="tr' + d['id'] + '">')
         table.push('<td>' + d['name'] + '</td>')
         table.push('<td>' + d['email'] + '</td>')
         table.push('<td>' + d['gender'] + '</td>')
@@ -83,6 +83,7 @@
             body.innerHTML = (res.data.msg);
             url = document.getElementById('popModalUrl');
             url.setAttribute('onclick', "closePop()");
+            document.getElementById(tr + id).remove();
             $('#popModal').modal('show');
         })
         .catch(function(error) {
