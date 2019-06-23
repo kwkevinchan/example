@@ -83,19 +83,19 @@
             body.innerHTML = (res.data.msg);
             url = document.getElementById('popModalUrl');
             url.setAttribute('onclick', "closePop()");
-            document.getElementById(tr + id).remove();
+            document.getElementById("tr" + id).remove();
             $('#popModal').modal('show');
         })
-        // .catch(function(error) {
-        //     console.log(error.response);
-        //     title = document.getElementById('popModalTitle');
-        //     title.innerHTML = (error.response.data.status);
-        //     body = document.getElementById('popModalBody');
-        //     body.innerHTML = (error.response.data.msg);
-        //     url = document.getElementById('popModalUrl');
-        //     url.setAttribute('onclick', "closePop()");
-        //     $('#popModal').modal('show');
-        // });
+        .catch(function(error) {
+            console.log(error.response);
+            title = document.getElementById('popModalTitle');
+            title.innerHTML = (error.response.data.status);
+            body = document.getElementById('popModalBody');
+            body.innerHTML = (error.response.data.msg);
+            url = document.getElementById('popModalUrl');
+            url.setAttribute('onclick', "closePop()");
+            $('#popModal').modal('show');
+        });
   }
 
   function closePop(){
