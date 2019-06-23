@@ -1,6 +1,6 @@
 <div class="modal fade" id="popModal" tabindex="-1" role="dialog" aria-labelledby="popModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content text-dark">
             <div class="modal-header">
                 <h5 class="modal-title" id="popModalTitle"></h5>
             </div>

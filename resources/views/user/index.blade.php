@@ -46,7 +46,6 @@
 @section('script')
 <script>
   const data = JSON.parse('{!! $data->toJson() !!}');
-  console.log(data)
   //初始表格
   let table = new Array();
   for(let item in data){
