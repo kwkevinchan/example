@@ -6,7 +6,7 @@
         <div class="col-8">
             <div class="card">
                 <div class="card-header bg-primary text-white">新增使用者</div>
-
+                @include('components.popModal')
                 <div class="card-body">
                     <form method="POST" action="/">
                         {{ csrf_field() }}
@@ -64,6 +64,8 @@
                             </div>
                         </div>
                     </form>
+
+
                 </div>
             </div>
         </div>
@@ -88,13 +90,21 @@
             comment: comment,
         })
         .then(function(res) {
-            console.log(res);
+            console.log(res.msg);
+            document.getElementById('popModalTitle').innerHTML(res.status);
+            document.getElementById('popModalBody').innerHTML(res.msg);
+            document.getElementById('popModalUrl').innerHTML("{{ route('index') }}");
+            $('#popModal').modal('show');
         })
         .catch(function(error) {
-            console.log('error');
-            console.log(error.response);
+            console.log(error.response.msg);
+            document.getElementById('popModalTitle').innerHTML(error.response.status);
+            document.getElementById('popModalBody').innerHTML(error.response.msg);
+            $('#popModal').modal('show');
         });
     }
+
+    function red
 </script>
 @endsection
 
