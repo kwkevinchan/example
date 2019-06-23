@@ -59,12 +59,12 @@
         table.push('<td>' + d['birthday'] + '</td>')
         table.push('<td>' + d['comment'] + '</td>')
         table.push('<td><a href="/user/'+ d['id'] +'/edit" class="btn text-white btn-primary" role="button" aria-pressed="true">修改使用者</a></td>')
-        table.push('<td><a href="/user/'+ d['id'] +'/delete" class="btn text-white btn-primary" role="button" aria-pressed="true" onclick="delete(' + d['id'] + ',' + d['name'] +')">刪除使用者</a></td>')
+        table.push('<td><a href="/user/'+ d['id'] +'/delete" class="btn text-white btn-primary" role="button" aria-pressed="true" onclick="deleteUser(' + d['id'] + ',' + d['name'] +')">刪除使用者</a></td>')
       table.push('</tr>')
   }
   document.getElementById('mainTable').innerHTML = table.join('');
 
-  function delete(id, name) {
+  function deleteUser(id, name) {
     title = document.getElementById('popModalTitle');
     title.innerHTML = ('您將刪除:' + name);
     url = document.getElementById('popModalUrl');
@@ -73,7 +73,7 @@
   }
 
   function sendDelete(id) {
-    axios.post("{{ route('user.destroy', [ 'id' => " + id + " ]) }}")
+    axios.get("{{ route('user.destroy', [ 'id' => " + id + " ]) }}")
         .then(function(res) {
             console.log(res.data.msg);
             title = document.getElementById('popModalTitle');
