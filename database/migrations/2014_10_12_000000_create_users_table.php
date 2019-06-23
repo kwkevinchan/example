@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('gender');
             $table->date('birthday');
-            $table->text('comment');
+            $table->text('comment')->nullable();
         });
     }
 
