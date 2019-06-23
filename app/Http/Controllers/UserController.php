@@ -43,7 +43,7 @@ class UserController extends Controller
                 'email' => $request->email,
                 'gender' => $request->gender,
                 'birthday' => $request->birthday,
-                'comment' => $request->comment,
+                'comment' => $request->comment ?? "",
             ]);
             return response()->json([
                 'status' => 'success',

@@ -100,11 +100,11 @@
             $('#popModal').modal('show');
         })
         .catch(function(error) {
-            console.log(error.response.msg);
+            console.log(error.response.data);
             title = document.getElementById('popModalTitle');
-            title.innerHTML = (error.response.status);
+            title.innerHTML = (error.response.data.status);
             body = document.getElementById('popModalBody');
-            body.innerHTML = (error.response.msg);
+            body.innerHTML = (error.response.data.msg);
             $('#popModal').modal('show');
         });
     }
