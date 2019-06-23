@@ -89,6 +89,8 @@
             title.innerHTML = (error.response.data.status);
             body = document.getElementById('popModalBody');
             body.innerHTML = (error.response.data.msg);
+            url = document.getElementById('popModalUrl');
+            url.setAttribute('style', "display:none;");
             $('#popModal').modal('show');
         });
   }
