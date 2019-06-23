@@ -8,7 +8,7 @@
                 <div class="card-header bg-primary text-white">新增使用者</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('user.store') }}">
+                    <form method="POST" action="/">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -58,7 +58,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary">
                                     新增使用者
                                 </button>
                             </div>
@@ -70,3 +70,29 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+<script>
+    function sendForm(){
+        name = document.getElementById('name').value;
+        email = document.getElementById('email').value;
+        birthday = document.getElementById('birthday').value;
+        gender = document.getElementById('gender').value;
+        comment = document.getElementById('comment').value;
+        axios.post("{{ route('user.store') }}", {
+            name: name,
+            email: email,
+            birthday: birthday,
+            gender: gender,
+            comment: comment,
+        })
+            .then(function(res) {
+                console.log(res);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
+</script>
+@endsection
+
